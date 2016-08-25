@@ -1,0 +1,7 @@
+#! /bin/sh
+#
+# Show disk usage in current directory
+#
+
+ls -A | xargs -d '\n' du -s | sort -n
+ 
