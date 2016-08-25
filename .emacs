@@ -18,7 +18,6 @@
  '(compilation-scroll-output t)
  '(compilation-search-path (quote (nil)))
  '(compilation-window-height 8)
- '(compile-command "nice make")
  '(delete-selection-mode nil nil (delsel))
  '(file-coding-system-alist (quote (("\\.elc\\'" emacs-mule . emacs-mule) ("\\(\\`\\|/\\)loaddefs.el\\'" raw-text . raw-text-unix) ("\\.tar\\'" no-conversion . no-conversion) ("" utf-8 . utf-8))))
  '(fill-column 72)
@@ -97,5 +96,5 @@
     (ansi-color-apply-on-region (point-min) (point-max))))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-(setq compile-command "stu")
+(setq compile-command "nice stu")
 

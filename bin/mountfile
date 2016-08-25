@@ -1,4 +1,7 @@
 #! /bin/sh
+#
+# Mount remote directories. 
+#
 
 #sshfs -o reconnect kunegis@linux.uni-koblenz.de:public_html/ ~/www/
 sshfs -o reconnect kunegis@estrella.west.uni-koblenz.de:/data/kunegis/ ~/estrella/

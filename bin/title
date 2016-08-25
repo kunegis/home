@@ -1,3 +1,10 @@
 #! /bin/sh
+#
+# Set the title of the current terminal window.
+#
+# INVOCATION
+#
+#         $0 TITLE
+#
 
 echo -n "]0;$@"
