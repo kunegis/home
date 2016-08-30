@@ -1,7 +1,6 @@
 #
 # The '.bashrc' file of Jérôme Kunegis.  '.bashrc' usually already
-# contains something, so better append this file instead of overwriting
-# with it. 
+# contains something, so better source this file using '.'. 
 #
 
 PS1="\h:\w $ "
@@ -45,6 +44,11 @@ git() {
 	fi
 }
 
-evince() {
-	command evince "$@" >/dev/null 2>&1
+# Same for SVN.  (Well, almost.)
+svn() {
+	if [ $# -eq 0 ] ; then
+		svn status
+	else
+		command svn "$@"
+	fi
 }
