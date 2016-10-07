@@ -28,8 +28,9 @@ git() {
 
 		# Show that we are in a branch, if we are not in 'master'
 		label="$(git symbolic-ref --short HEAD)"
+		[ "$?" = 0 ] || return 1
 		if [ "$label" != master ] ; then
-			echo "In branch '$label'"
+			echo "[43mIn branch '$label'[m"
 		fi
 
 		# Things to push
