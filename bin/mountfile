@@ -1,15 +1,11 @@
 #! /bin/sh
 #
-# Mount remote directories. 
+# Mount remote directories.  These are just examples.  Adapt to what you
+# need.  
 #
 
-#sshfs -o reconnect kunegis@linux.uni-koblenz.de:public_html/ ~/www/
 sshfs -o reconnect kunegis@estrella.west.uni-koblenz.de:/data/kunegis/ ~/estrella/
-#sshfs -o reconnect kunegis@estrella.uni-koblenz.de:/home/hheinz/socialsensor/results ~/graphviz-results/
 
-#
-# BSCW Directories
-#
-
-#sudo mount -t davfs https://bscw.uni-koblenz.de/bscw/bscw.cgi/home/WeST-BSCW ~/WeST -o uid=$USER
-#sudo mount -t davfs https://bscw.uni-koblenz.de/bscw/bscw.cgi/home/DFG-2011-91BGG ~/DFG-2011-91BGG -o uid=$USER
+sudo mount -t davfs \
+   https://bscw.uni-koblenz.de/bscw/bscw.cgi/home/DFG-2011-91BGG \
+   ~/DFG-2011-91BGG -o uid=$USER

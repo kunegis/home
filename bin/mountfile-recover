@@ -1,0 +1,8 @@
+#! /bin/sh
+#
+# Unmount all user-mounted directories.  This is just example code.  And
+# very probably not the best solution. 
+# 
+
+sudo killall sshfs -9
+sudo fusermount -u ~/estrella
