@@ -30,7 +30,7 @@ git() {
 		label="$(git symbolic-ref --short HEAD)"
 		[ "$?" = 0 ] || return 1
 		if [ "$label" != master ] ; then
-			echo "[43mIn branch '$label'[m"
+			echo "[43;37;1mIn branch '$label'[m"
 		fi
 
 		# Things to push
