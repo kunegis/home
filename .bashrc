@@ -57,13 +57,12 @@ svn() {
 # Check all Git/SVN directories under ~/work/, which is where all my
 # work is.  
 work() {
-	cd "$HOME"/work/
 	for dir in * ; do
 		cd "$dir" 
 		{
 			[ -r .git ] && git
 			[ -r .svn ] && svn
 		} | sed -E -e 's,^,'"$dir"':	,'
-		cd "$HOME"/work/
+		cd .. 
 	done
 }
