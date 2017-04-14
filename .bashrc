@@ -66,3 +66,15 @@ work() {
 		cd .. 
 	done
 }
+
+# Update/pull all repositories 
+pull() {
+	for dir in * ; do
+		cd "$dir" 
+		{
+			[ -r .git ] && git pull
+			[ -r .svn ] && svn update
+		} | sed -E -e 's,^,'"$dir"':	,'
+		cd .. 
+	done
+}
