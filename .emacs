@@ -74,11 +74,12 @@
 
 (setq auto-mode-alist (cons '("Makefile.*" . makefile-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.stu$" . shell-script-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
-; Matlab Mode.                                                                                                                                     
-;; Replace path below to be where your matlab.el file is.                                                                                          
-(add-to-list 'load-path "/home/kunegis/Archiv/bin/matlab-el/")
-(load-library "matlab-load")
+;; ; Matlab Mode.
+;;   ;; Replace path below to be where your matlab.el file is.
+;;      (add-to-list 'load-path "/home/kunegis/Archiv/bin/matlab-el/")
+;; (load-library "matlab-load")
 
 ;; Ubuntu input method bug  
 ;; https://www.emacswiki.org/emacs/DeadKeys
