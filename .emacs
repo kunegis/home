@@ -5,10 +5,10 @@
 ;; global
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(auto-raise-tool-bar-buttons t t)
  '(auto-resize-tool-bars t t)
  '(blink-cursor-mode nil)
@@ -25,7 +25,6 @@
  '(menu-bar-mode nil)
  '(scroll-bar-mode (quote right))
  '(sh-basic-offset 8)
- '(sh-indent-comment t)
  '(sh-indentation 8)
  '(show-paren-mode t)
  '(tool-bar-button-margin 1 t)
@@ -33,10 +32,10 @@
  '(tooltip-mode t nil (tooltip)))
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue")))))
 
 (global-font-lock-mode 1)
@@ -98,4 +97,8 @@
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 (setq compile-command "nice stu")
+
+(add-hook 'shell-script-mode-hook
+	  (lambda ()
+	    (setq-default comment-start "## ")))
 
