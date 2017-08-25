@@ -11,7 +11,7 @@ export EDITOR="vim"
 export LS_COLORS='ex=47;1:di=106;1:ln=target:or=41:ow=103;1'
 
 # For screen(1)
-[ "$PS1_OVERRIDE" ] && PS1="$PS1_OVERRIDE"
+[ "$STY" ] && PS1="[$STY] $PS1"
 
 # Disable Tilde Expansion
 _expand()
