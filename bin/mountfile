@@ -1,8 +1,11 @@
-#! /bin/sh
 #
 # Mount remote directories.  These are just examples.  Adapt to what you
 # need.  
 #
+
+sshfs -o reconnect srv-konect:/data/kunegis/ ~/srv-konect/
+
+## Old stuff
 
 sshfs -o reconnect kunegis@estrella.west.uni-koblenz.de:/data/kunegis/ ~/estrella/
 
