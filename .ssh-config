@@ -1,0 +1,16 @@
+TCPKeepAlive yes
+ServerAliveInterval 200
+
+# UNamur Gateway (email from Juan)
+Host hal
+    Hostname hal.unamur.be
+    User jkunegis
+    Identityfile ~/.ssh/id_rsa
+    ForwardAgent yes
+
+Host srv-konect
+    Hostname srv-konect.math.fundp.ac.be
+    User kunegis
+    ProxyCommand ssh hal -W %h:%p 2> /dev/null
+    IdentitiesOnly no
+    ForwardAgent yes
