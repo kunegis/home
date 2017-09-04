@@ -1,3 +1,4 @@
+#! /bin/sh
 #
 # Mount remote directories.  These are just examples.  Adapt to what you
 # need.  
@@ -7,8 +8,8 @@ sshfs -o reconnect srv-konect:/data/kunegis/ ~/srv-konect/
 
 ## Old stuff
 
-sshfs -o reconnect kunegis@estrella.west.uni-koblenz.de:/data/kunegis/ ~/estrella/
+## sshfs -o reconnect kunegis@estrella.west.uni-koblenz.de:/data/kunegis/ ~/estrella/
 
-sudo mount -t davfs \
-   https://bscw.uni-koblenz.de/bscw/bscw.cgi/home/DFG-2011-91BGG \
-   ~/DFG-2011-91BGG -o uid=$USER
+##sudo mount -t davfs \
+##   https://bscw.uni-koblenz.de/bscw/bscw.cgi/home/DFG-2011-91BGG \
+##   ~/DFG-2011-91BGG -o uid=$USER
