@@ -8,8 +8,8 @@ Host hal
     Identityfile ~/.ssh/id_rsa
     ForwardAgent yes
 
-Host srv-konect
-    Hostname srv-konect.math.fundp.ac.be
+Host konect
+    Hostname konect.math.fundp.ac.be
     User kunegis
     ProxyCommand ssh hal -W %h:%p 2> /dev/null
     IdentitiesOnly no
