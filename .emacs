@@ -19,12 +19,18 @@
  '(compilation-search-path (quote (nil)))
  '(compilation-window-height 8)
  '(delete-selection-mode nil nil (delsel))
- '(file-coding-system-alist (quote (("\\.elc\\'" emacs-mule . emacs-mule) ("\\(\\`\\|/\\)loaddefs.el\\'" raw-text . raw-text-unix) ("\\.tar\\'" no-conversion . no-conversion) ("" utf-8 . utf-8))))
+ '(file-coding-system-alist
+   (quote
+    (("\\.elc\\'" emacs-mule . emacs-mule)
+     ("\\(\\`\\|/\\)loaddefs.el\\'" raw-text . raw-text-unix)
+     ("\\.tar\\'" no-conversion . no-conversion)
+     ("" utf-8 . utf-8))))
  '(fill-column 72)
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
  '(scroll-bar-mode (quote right))
  '(sh-basic-offset 8)
+ '(sh-indent-comment 0)
  '(sh-indentation 8)
  '(show-paren-mode t)
  '(tool-bar-button-margin 1 t)
@@ -98,7 +104,10 @@
 
 (setq compile-command "nice stu")
 
-(add-hook 'shell-script-mode-hook
+(add-hook 'sh-mode-hook
 	  (lambda ()
 	    (setq-default comment-start "## ")))
+(add-hook 'sh-mode-hook
+	  (lambda ()
+	    (setq comment-start "## ")))
 
