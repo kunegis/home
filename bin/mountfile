@@ -3,4 +3,4 @@
 # Mount remote directories.  
 #
 
-sshfs -o ro -o reconnect konect:/data/kunegis/ ~/konect/
+sshfs -o ro -o reconnect konect:/data/Data/ ~/Data/
