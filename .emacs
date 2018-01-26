@@ -102,7 +102,7 @@
     (ansi-color-apply-on-region (point-min) (point-max))))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-(setq compile-command "nice stu")
+(setq compile-command "nice stu -E")
 
 (add-hook 'sh-mode-hook
 	  (lambda ()
@@ -110,4 +110,3 @@
 (add-hook 'sh-mode-hook
 	  (lambda ()
 	    (setq comment-start "## ")))
-
