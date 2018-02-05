@@ -3,5 +3,5 @@
 # Show disk usage in current directory.
 #
 
-ls -A | xargs -d '\n' du -s | sort -n
+ls -UA1 | xargs -d '\n' du -s | sort -n
  
