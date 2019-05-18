@@ -110,3 +110,7 @@
 (add-hook 'sh-mode-hook
 	  (lambda ()
 	    (setq comment-start "## ")))
+
+; Highlight the current line
+; from https://emacsredux.com/blog/2013/04/02/highlight-current-line/
+(global-hl-line-mode +1)
