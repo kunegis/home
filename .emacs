@@ -115,4 +115,5 @@
 ; from https://emacsredux.com/blog/2013/04/02/highlight-current-line/
 (global-hl-line-mode +1)
 
-(set-frame-font "Fantasque Sans Mono 16" nil t)
+; (set-frame-font "Fantasque Sans Mono 16" nil t)
+(set-frame-font "Hack 15" nil t)
