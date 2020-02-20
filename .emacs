@@ -116,4 +116,4 @@
 (global-hl-line-mode +1)
 
 ; (set-frame-font "Fantasque Sans Mono 16" nil t)
-(set-frame-font "Hack 14" nil t)
+(set-frame-font "Hack 12" nil t)
