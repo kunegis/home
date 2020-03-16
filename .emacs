@@ -25,7 +25,7 @@
      ("\\(\\`\\|/\\)loaddefs.el\\'" raw-text . raw-text-unix)
      ("\\.tar\\'" no-conversion . no-conversion)
      ("" utf-8 . utf-8))))
- '(fill-column 72)
+ '(fill-column 100)
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
  '(scroll-bar-mode (quote right))
@@ -116,4 +116,4 @@
 (global-hl-line-mode +1)
 
 ; (set-frame-font "Fantasque Sans Mono 16" nil t)
-(set-frame-font "Hack 12" nil t)
+(set-frame-font "Hack 11" nil t)
