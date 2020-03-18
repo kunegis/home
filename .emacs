@@ -25,7 +25,7 @@
      ("\\(\\`\\|/\\)loaddefs.el\\'" raw-text . raw-text-unix)
      ("\\.tar\\'" no-conversion . no-conversion)
      ("" utf-8 . utf-8))))
- '(fill-column 100)
+ '(fill-column 80)
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
  '(scroll-bar-mode (quote right))
