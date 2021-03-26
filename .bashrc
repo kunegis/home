@@ -78,4 +78,3 @@ pull() {
 		cd .. 
 	done
 }
-
