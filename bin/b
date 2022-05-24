@@ -1,0 +1,15 @@
+#! /bin/sh
+#
+# Set brightness on my main monitor.
+#
+# INVOCATION
+#	$1	Bright value, floating point number, 1 is normal, 0 is all black
+#
+
+[ "$1" ] || {
+	echo >&2 '*** Expected argument'
+	exit 1
+}
+
+exec xrandr --output HDMI-1 --brightness "$1"
+
