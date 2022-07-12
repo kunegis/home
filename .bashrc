@@ -54,7 +54,7 @@ svn() {
 	fi
 }
 
-# Check all Git/SVN directories under ~/work/, which is where all my
+# Check all Git/SVN directories under ~/src/, which is where all my
 # work is.  
 work() {
 	for dir in * ; do
