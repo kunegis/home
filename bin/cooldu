@@ -1,0 +1,28 @@
+#! /bin/sh
+#
+# Like "du", but cool.  It shows a running count.
+#
+
+if [ -z "$1" ] ; then
+	dir=.
+else
+	dir="$1"
+fi
+
+blocksize=$(stat -c %B .)
+total=0
+
+find "$dir" | while IFS= read -r filename ; do
+	size_blocks=$(stat "$filename" -c %b)
+	expr "$size_blocks" : '^[0-9][0-9]*$' >/dev/null || {
+		echo >&2 '*** Warning: stat failed'
+		echo >&2 "filename=$filename"
+		continue
+	}
+	size=$(( $size_blocks * $blocksize ))
+	total=$(( $total + $size ))
+	totaltext=$(echo "$total" | sed -E 's/(.)(............)$/\1,\2/;s/(.)(.........)$/\1,\2/;s/(.)(......)$/\1,\2/;s/(.)(...)$/\1,\2/')
+	printf '%s%s' '' "$totaltext B"
+done
+
+printf '\n'
