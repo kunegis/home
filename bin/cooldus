@@ -12,7 +12,7 @@ fi
 blocksize=$(stat -c %B .)
 total=0
 
-find "$dir" | while IFS= read -r filename ; do
+find -- "$dir" | while IFS= read -r filename ; do
 	size_blocks=$(stat "$filename" -c %b)
 	expr "$size_blocks" : '^[0-9][0-9]*$' >/dev/null || {
 		echo >&2 '*** Warning: stat failed'
@@ -21,8 +21,8 @@ find "$dir" | while IFS= read -r filename ; do
 	}
 	size=$(( $size_blocks * $blocksize ))
 	total=$(( $total + $size ))
-	totaltext=$(echo "$total" | sed -E 's/(.)(............)$/\1,\2/;s/(.)(.........)$/\1,\2/;s/(.)(......)$/\1,\2/;s/(.)(...)$/\1,\2/')
-	printf '%s%s' '' "$totaltext B"
+	totaltext=$(echo "$total" | sed -E 's/(.)(...............)$/\1,\2/;s/(.)(............)$/\1,\2/;s/(.)(.........)$/\1,\2/;s/(.)(......)$/\1,\2/;s/(.)(...)$/\1,\2/')
+	printf '%s%s%s%s B %s' '[2K' '[1;7m' "$totaltext" '[0m' "$filename"
 done
 
 printf '\n'

@@ -33,6 +33,10 @@ git() {
 			echo "[43;37;1m In branch $label [m"
 		fi
 
+		# Add this in front of the next two command in case git uses a
+		# pager unnecessarily.
+		## GIT_PAGER=cat
+		
 		# Things to push
 		git log --oneline origin/"$label"..HEAD &&    
 
