@@ -26,50 +26,65 @@ _expand()
 git() {
 	if [ $# -eq 0 ] ; then 
 
-		# Show that we are in a branch, if we are not in 'master'
-		label=$(git symbolic-ref --short HEAD)
-		[ "$?" = 0 ] || return 1
-		if [ "$label" != master ] ; then
-			echo "[43;37;1m In branch $label [m"
+		if [ -e .git ] ; then
+			# Show that we are in a branch, if we are not in 'master'
+			label=$(git symbolic-ref --short HEAD)
+			[ "$?" = 0 ] || return 1
+			if [ "$label" != master ] ; then
+				echo "[43;37;1m In branch $label [m"
+			fi
+
+			# Add this in front of the next two command in case git uses a
+			# pager unnecessarily.
+			## GIT_PAGER=cat
+			
+			# Things to push
+			git log --oneline origin/"$label"..HEAD &&    
+
+			# Things to add/commit
+			git status -s
+
+		else
+			# If there is not .git directory, assume that we are in
+			# ~/src, where all subdirectories are git directories.
+			for dir in * ; do
+				cd "$dir" 
+				{
+					[ -e .git ] && git
+					# Do nothing if not a git directory
+				} | sed -E -e 's,^,'"$dir"':	,'
+				cd .. 
+			done
 		fi
-
-		# Add this in front of the next two command in case git uses a
-		# pager unnecessarily.
-		## GIT_PAGER=cat
-		
-		# Things to push
-		git log --oneline origin/"$label"..HEAD &&    
-
-		# Things to add/commit
-		git status -s 
-
 	else
 		# When followed by a command, just execute Git
 		command git "$@"
 	fi
 }
 
-# Same for SVN.  (Well, almost.)
-svn() {
-	if [ $# -eq 0 ] ; then
-		svn status
-	else
-		command svn "$@"
-	fi
-}
+## ---------- I never use SVN anymore
+## # Same for SVN.  (Well, almost.)
+## svn() {
+## 	if [ $# -eq 0 ] ; then
+## 		svn status
+## 	else
+## 		command svn "$@"
+## 	fi
+## }
 
-# Check all Git/SVN directories under ~/src/, which is where all my
-# work is.  
-work() {
-	for dir in * ; do
-		cd "$dir" 
-		{
-			[ -r .git ] && git
-			[ -r .svn ] && svn
-		} | sed -E -e 's,^,'"$dir"':	,'
-		cd .. 
-	done
-}
+## --- subsumed under the "git" alias
+## # Check all Git/SVN directories under ~/src/, which is where all my
+## # work is.  
+## work() {
+## 	for dir in * ; do
+## 		cd "$dir" 
+## 		{
+## 			[ -r .git ] && git
+## 			[ -r .svn ] && svn
+## 		} | sed -E -e 's,^,'"$dir"':	,'
+## 		cd .. 
+## 	done
+## }
 
 # Update/pull all repositories 
 pull() {

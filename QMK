@@ -1,0 +1,16 @@
+Keyboard:  Keychron V3 ISO German. 
+
+== VIA app ==
+
+https://www.keychron.com/blogs/archived/how-to-use-via-to-program-your-keyboard
+
+Install the Deb version, and run it.
+
+== QMK app ==
+
+Not tested.
+
+https://www.youtube.com/watch?v=-imgglzDMdY
+https://docs.qmk.fm/#/newbs
+https://config.qmk.fm/#/40percentclub/nano/LAYOUT_ortho_2x4  (has list of supported keyboards)
+
