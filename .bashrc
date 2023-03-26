@@ -31,7 +31,7 @@ git() {
 			label=$(git symbolic-ref --short HEAD)
 			[ "$?" = 0 ] || return 1
 			if [ "$label" != master ] ; then
-				echo "[43;37;1m In branch $label [m"
+				echo "In branch [43;37;1m $label [m"
 			fi
 
 			# Add this in front of the next two command in case git uses a
