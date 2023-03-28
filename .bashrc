@@ -27,11 +27,14 @@ git() {
 	if [ $# -eq 0 ] ; then 
 
 		if [ -e .git ] ; then
-			# Show that we are in a branch, if we are not in 'master'
 			label=$(git symbolic-ref --short HEAD)
-			[ "$?" = 0 ] || return 1
-			if [ "$label" != master ] ; then
-				echo "In branch [43;37;1m $label [m"
+
+			# Show that we are in a branch, if we are not in 'master'
+			if [ -z "$jk_git_no_branch" ] ; then
+				[ "$?" = 0 ] || return 1
+				if [ "$label" != master ] ; then
+					echo "In branch [43;37;1m $label [m"
+				fi
 			fi
 
 			# Add this in front of the next two command in case git uses a
@@ -45,12 +48,12 @@ git() {
 			git status -s
 
 		else
-			# If there is not .git directory, assume that we are in
+			# If there is no .git directory, assume that we are in
 			# ~/src, where all subdirectories are git directories.
 			for dir in * ; do
 				cd "$dir" 
 				{
-					[ -e .git ] && git
+					[ -e .git ] && jk_git_no_branch=1 git
 					# Do nothing if not a git directory
 				} | sed -E -e 's,^,'"$dir"':	,'
 				cd .. 
