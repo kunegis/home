@@ -5,7 +5,7 @@
 
 PS1="\h:\w $ "
 
-export EDITOR="vim"
+export EDITOR=vim
 
 # Made to work on a white background 
 export LS_COLORS='ex=47;1:di=106;1:ln=target:or=41:ow=103;1'
@@ -13,7 +13,7 @@ export LS_COLORS='ex=47;1:di=106;1:ln=target:or=41:ow=103;1'
 # For screen(1)
 [ "$STY" ] && PS1="[$STY] $PS1"
 
-# Disable Tilde Expansion
+# Disable tilde expansion
 _expand()
 {
 	return 0;
@@ -25,7 +25,6 @@ _expand()
 # on a branch.)  Everything output here is from old to new. 
 git() {
 	if [ $# -eq 0 ] ; then 
-
 		if [ -e .git ] ; then
 			label=$(git symbolic-ref --short HEAD)
 			[ "$?" = 0 ] || return 1
@@ -47,6 +46,10 @@ git() {
 		else
 			# If there is no .git directory, assume that we are in
 			# ~/src, where all subdirectories are git directories.
+			if [ "$(basename $(pwd))" != src ] ; then
+				echo >&2 "*** git(): Not a git directory"
+				return 1
+			fi 
 			for dir in * ; do
 				cd "$dir" 
 				{
@@ -57,7 +60,6 @@ git() {
 			done
 		fi
 	else
-		# When followed by a command, just execute Git
 		command git "$@"
 	fi
 }
