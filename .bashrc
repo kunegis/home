@@ -16,7 +16,7 @@ export LS_COLORS='ex=47;1:di=106;1:ln=target:or=41:ow=103;1'
 # Disable Tilde Expansion
 _expand()
 {
-    return 0;
+	return 0;
 }
 
 # Allows to just type 'git' and get a summary of important information
