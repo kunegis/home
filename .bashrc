@@ -30,22 +30,21 @@ git() {
 			label=$(git symbolic-ref --short HEAD)
 			[ "$?" = 0 ] || return 1
 
-##			# Show that we are in a branch, if we are not in 'master'
-##			if [ -z "$jk_git_no_branch" ] ; then
-##				if [ "$label" != master ] ; then
-##					echo "In branch [43;37;1m $label [m"
-##				fi
-##			fi
+			# Show that we are in a branch, if we are not in 'master'
+			if [ -z "$jk_git_no_branch" -a "$label" != master ] ; then
+##				git status -s -b | head -1 
+				echo "In branch [43;37;1m $label [m"
+			fi
 
 			# Add this in front of the next two command in case git uses a
 			# pager unnecessarily.
 			## GIT_PAGER=cat
 			
 			# Things to push
-			git log --oneline origin/"$label"..HEAD &&    
+			git log --oneline origin/"$label"..HEAD 
 
 			# Things to add/commit
-			git status -s -b
+			git status -s 
 
 		else
 			# If there is no .git directory, assume that we are in
