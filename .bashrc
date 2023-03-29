@@ -22,7 +22,7 @@ _expand()
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs
 # the empty string."  (Except for the branch information, when working
-# on a branch.)
+# on a branch.)  Everything output here is from old to new. 
 git() {
 	if [ $# -eq 0 ] ; then 
 
@@ -41,7 +41,7 @@ git() {
 			## GIT_PAGER=cat
 			
 			# Things to push
-			git log --oneline origin/"$label"..HEAD 
+			git log --oneline --reverse --no-decorate origin/"$label"..HEAD 
 
 			# Things to add/commit
 			git status -s 
