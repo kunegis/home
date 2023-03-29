@@ -32,13 +32,11 @@ git() {
 
 			# Show that we are in a branch, if we are not in 'master'
 			if [ -z "$jk_git_no_branch" -a "$label" != master ] ; then
-##				git status -s -b | head -1 
 				echo "In branch [43;37;1m $label [m"
 			fi
 
-			# Add this in front of the next two command in case git uses a
-			# pager unnecessarily.
-			## GIT_PAGER=cat
+			# In case git uses a pager unnecessarily
+			# GIT_PAGER=cat
 			
 			# Things to push
 			git log --oneline --reverse --no-decorate origin/"$label"..HEAD 
@@ -64,37 +62,12 @@ git() {
 	fi
 }
 
-## ---------- I never use SVN anymore
-## # Same for SVN.  (Well, almost.)
-## svn() {
-## 	if [ $# -eq 0 ] ; then
-## 		svn status
-## 	else
-## 		command svn "$@"
-## 	fi
-## }
-
-## --- subsumed under the "git" alias
-## # Check all Git/SVN directories under ~/src/, which is where all my
-## # work is.  
-## work() {
-## 	for dir in * ; do
-## 		cd "$dir" 
-## 		{
-## 			[ -r .git ] && git
-## 			[ -r .svn ] && svn
-## 		} | sed -E -e 's,^,'"$dir"':	,'
-## 		cd .. 
-## 	done
-## }
-
 # Update/pull all repositories 
 pull() {
 	for dir in * ; do
 		cd "$dir" 
 		{
 			[ -r .git ] && git pull 
-			[ -r .svn ] && svn update
 		} | sed -E -e 's,^,'"$dir"':	,'
 		cd .. 
 	done
