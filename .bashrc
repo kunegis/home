@@ -3,6 +3,8 @@
 # contains something, so better source this file using '.'. 
 #
 
+umask 077
+
 PS1="\h:\w $ "
 
 export EDITOR=vim
@@ -18,6 +20,8 @@ _expand()
 {
 	return 0;
 }
+
+alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs

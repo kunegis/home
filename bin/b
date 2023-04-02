@@ -6,10 +6,10 @@
 #	$1	Bright value, floating point number, 1 is normal, 0 is all black
 #
 
-[ "$1" ] || {
-	echo >&2 '*** Expected argument'
-	exit 1
-}
+value=$1
 
-exec xrandr --output HDMI-1 --brightness "$1"
+if [ -z "$value" ] ; then
+	value=.5
+fi
 
+exec xrandr --output HDMI-1 --brightness "$value"
