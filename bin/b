@@ -9,7 +9,7 @@
 value=$1
 
 if [ -z "$value" ] ; then
-	value=.45
+	value=.40
 fi
 
 exec xrandr --output HDMI-1 --brightness "$value"
