@@ -26,6 +26,7 @@
      ("\\.tar\\'" no-conversion . no-conversion)
      ("" utf-8 . utf-8))))
  '(fill-column 80)
+ '(font-lock-global-modes (quote (not speedbar-mode)))
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
  '(scroll-bar-mode (quote right))
@@ -33,6 +34,8 @@
  '(sh-indent-comment 0)
  '(sh-indentation 8)
  '(show-paren-mode t)
+ '(todoo-indent-column 0)
+ '(todoo-sub-item-marker "**")
  '(tool-bar-button-margin 1 t)
  '(tool-bar-mode nil nil (tool-bar))
  '(tooltip-mode t nil (tooltip)))
@@ -42,7 +45,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue")))))
+ '(custom-comment ((t (:background "cyan"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "indian red"))))
+ '(font-lock-comment-face ((t (:foreground "indian red"))))
+ '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue"))))
+ '(todoo-item-header-face ((t (:foreground "goldenrod")))))
 
 (global-font-lock-mode 1)
 (setq font-lock-maximum-decoration t)
@@ -117,3 +124,5 @@
 
 ; (set-frame-font "Fantasque Sans Mono 16" nil t)
 (set-frame-font "Hack 11" nil t)
+
+(load-theme 'deeper-blue t)
