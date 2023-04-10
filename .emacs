@@ -29,6 +29,11 @@
  '(font-lock-global-modes (quote (not speedbar-mode)))
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
+ '(safe-local-variable-values
+   (quote
+    ((vc-prepare-patches-separately)
+     (diff-add-log-use-relative-names . t)
+     (vc-git-annotate-switches . "-w"))))
  '(scroll-bar-mode (quote right))
  '(sh-basic-offset 8)
  '(sh-indent-comment 0)
@@ -123,6 +128,6 @@
 (global-hl-line-mode +1)
 
 ; (set-frame-font "Fantasque Sans Mono 16" nil t)
-(set-frame-font "Hack 11" nil t)
+(set-frame-font "Hack 12" nil t)
 
 (load-theme 'deeper-blue t)
