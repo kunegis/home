@@ -9,9 +9,6 @@ PS1="\h:\w $ "
 
 export EDITOR=vim
 
-# Made to work on a white background 
-export LS_COLORS='ex=47;1:di=106;1:ln=target:or=41:ow=103;1'
-
 # For screen(1)
 [ "$STY" ] && PS1="[$STY] $PS1"
 
@@ -22,6 +19,7 @@ _expand()
 }
 
 alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
+alias ls='ls --color'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs

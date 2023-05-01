@@ -1,0 +1,5 @@
+[user]
+	email = kunegis@gmail.com
+	name = Jérôme Kunegis
+[core]
+	excludesfile = /home/kunegis/.gitignore
