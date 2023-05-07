@@ -50,10 +50,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "gray20" :foreground "gray80" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "SRC" :family "Hack"))))
  '(custom-comment ((t (:background "cyan"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "indian red"))))
- '(font-lock-comment-face ((t (:foreground "indian red"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "light coral"))))
+ '(font-lock-comment-face ((t (:foreground "light coral"))))
  '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue"))))
+ '(hl-line ((t (:background "gray6"))))
  '(todoo-item-header-face ((t (:foreground "goldenrod")))))
 
 (global-font-lock-mode 1)
@@ -87,26 +89,9 @@
 (global-set-key [f11] 'next-error)
 (global-set-key [f12] 'jay-goto-comp)
 
-;; WeST
-
 (setq auto-mode-alist (cons '("Makefile.*" . makefile-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.stu$" . shell-script-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist))
-
-;; ; Matlab Mode.
-;;   ;; Replace path below to be where your matlab.el file is.
-;;      (add-to-list 'load-path "/home/kunegis/Archiv/bin/matlab-el/")
-;; (load-library "matlab-load")
-
-;; Ubuntu input method bug  
-;; https://www.emacswiki.org/emacs/DeadKeys
-; (require 'iso-transl) ; works for some combinations, not all
-
-;(defun set-window-undedicated-p (window flag)
-; "Never set window dedicated."
-; flag)
-
-; (advice-add 'set-window-dedicated-p :override #'set-window-undedicated-p)
 
 (require 'ansi-color)
 (defun colorize-compilation-buffer ()

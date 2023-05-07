@@ -33,7 +33,7 @@ git() {
 
 			# Show that we are in a branch, if we are not in 'master'
 			if [ -z "$jk_git_no_branch" -a "$label" != master ] ; then
-				echo "In branch [43;37;1m $label [m"
+				echo "In branch [35m$label[m"
 			fi
 
 			# In case git uses a pager unnecessarily
