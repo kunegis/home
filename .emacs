@@ -51,7 +51,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "gray20" :foreground "gray80" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "SRC" :family "Hack"))))
+ '(compilation-error ((t (:foreground "chocolate1"))))
  '(custom-comment ((t (:background "cyan"))))
+ '(dired-ignored ((t (:inherit shadow :foreground "gray47"))))
+ '(dired-mark ((t (:foreground "deep sky blue"))))
+ '(dired-marked ((t (:foreground "chartreuse"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "light coral"))))
  '(font-lock-comment-face ((t (:foreground "light coral"))))
  '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue"))))
@@ -103,10 +107,10 @@
 
 (add-hook 'sh-mode-hook
 	  (lambda ()
-	    (setq-default comment-start "## ")))
+	    (setq-default comment-start "##")))
 (add-hook 'sh-mode-hook
 	  (lambda ()
-	    (setq comment-start "## ")))
+	    (setq comment-start "##")))
 
 ; Highlight the current line
 ; from https://emacsredux.com/blog/2013/04/02/highlight-current-line/

@@ -6,10 +6,12 @@
 #	$1	Bright value, floating point number, 1 is normal, 0 is all black
 #
 
+default_value=0.60
+
 value=$1
 
 if [ -z "$value" ] ; then
-	value=.40
+	value=$default_value
 fi
 
 exec xrandr --output HDMI-1 --brightness "$value"

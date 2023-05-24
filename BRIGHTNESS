@@ -1,3 +1,0 @@
-Set the brightness of the external screen:
-
-$ xrandr --output HDMI-1 --brightness 0.63
