@@ -6,7 +6,7 @@
 #	$1	Bright value, floating point number, 1 is normal, 0 is all black
 #
 
-default_value=0.60
+default_value=0.58
 
 value=$1
 

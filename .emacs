@@ -56,6 +56,8 @@
  '(dired-ignored ((t (:inherit shadow :foreground "gray47"))))
  '(dired-mark ((t (:foreground "deep sky blue"))))
  '(dired-marked ((t (:foreground "chartreuse"))))
+ '(error ((t (:foreground "brown1"))))
+ '(font-lock-builtin-face ((t (:foreground "deep sky blue"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "light coral"))))
  '(font-lock-comment-face ((t (:foreground "light coral"))))
  '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue"))))
