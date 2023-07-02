@@ -18,8 +18,10 @@ _expand()
 	return 0;
 }
 
+PATH="$HOME/src/home/bin:$PATH"
+
 alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
-alias ls='ls --color'
+alias ls='ls --color=auto'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs

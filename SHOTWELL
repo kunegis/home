@@ -1,3 +1,4 @@
 Settings:
+* Disable plugins
 * Set tags and metadata to be written directly into image files
-* Set ~/Media/src/ as the library location
+* Set ~/Media/src/ as the library location, and set to watch automatically for new files
