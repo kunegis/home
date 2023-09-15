@@ -18,7 +18,7 @@ _expand()
 	return 0;
 }
 
-PATH="$HOME/src/home/bin:$PATH"
+PATH="$HOME/bin:$HOME/src/home/bin:$PATH"
 
 alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
 alias ls='ls --color=auto'
