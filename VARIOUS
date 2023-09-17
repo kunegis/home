@@ -1,0 +1,4 @@
+Various Ubuntu settings.
+
+* ibus-setup:  Run "ibus-setup" in the terminal and set the "Emoji" shortcut to
+  something else, because otherwise Ctrl-; keeps popping up an "e" tooltip.

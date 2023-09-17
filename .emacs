@@ -123,3 +123,5 @@
 (load-theme 'deeper-blue t)
 
 (set-default-file-modes ?\700)
+
+; (set-face-background 'scroll-bar "darkgrey")
