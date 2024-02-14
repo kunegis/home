@@ -1,9 +1,15 @@
 Things I haven't managed to do.
 
 * Lemmy
-** Keyboard shortcut for upvoting
-** find a Firefox plugin that redirects from any instance to my home instance
+** Keyboard shortcut for upvoting (e.g. "a").
+*** The one Firefox extension that exists doesn't work because it also changes
+    the background color of comments in a way that interferes with Dark Reader.
+** Find a Firefox plugin that redirects from any instance to my home instance
+*** Tried one, didn't work.
 ** Card view by default
-** Block whole instances
+*** Will probably be implemented.
+** Block all users from one instance
 ** Inside a post, sort comments by Top by default
 ** "Best" sorting option that also shows posts in small communities
+*** Will probably be implemented.
+
