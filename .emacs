@@ -24,7 +24,7 @@
      ("\\(\\`\\|/\\)loaddefs.el\\'" raw-text . raw-text-unix)
      ("\\.tar\\'" no-conversion . no-conversion)
      ("" utf-8 . utf-8)))
- '(fill-column 80)
+ '(fill-column 90)
  '(font-lock-global-modes '(not speedbar-mode))
  '(mark-even-if-inactive t)
  '(menu-bar-mode nil)
@@ -58,7 +58,11 @@
  '(font-lock-builtin-face ((t (:foreground "deep sky blue"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "light coral"))))
  '(font-lock-comment-face ((t (:foreground "light coral"))))
+ '(font-lock-function-name-face ((t (:foreground "white smoke" :weight bold))))
+ '(font-lock-keyword-face ((t (:foreground "turquoise1"))))
  '(font-lock-string-face ((((class color) (min-colors 88) (background light)) (:foreground "DarkBlue"))))
+ '(font-lock-type-face ((t (:foreground "medium aquamarine"))))
+ '(font-lock-variable-name-face ((t (:foreground "gray"))))
  '(hl-line ((t (:background "gray6"))))
  '(region ((t (:extend t :background "dim gray"))))
  '(todoo-item-header-face ((t (:foreground "goldenrod")))))
@@ -90,9 +94,10 @@
 (global-set-key [f7] 'fill-region) 
 (global-set-key [f8] 'compilation-mode)
 (global-set-key [f9] 'compile) 
-(global-set-key [f10] 'indent-region)
+(global-set-key [f10] 'view-mode)
 (global-set-key [f11] 'next-error)
 (global-set-key [f12] 'jay-goto-comp)
+(global-set-key (kbd "C-x C-r") 'view-file)
 
 (setq auto-mode-alist (cons '("Makefile.*" . makefile-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.stu$" . shell-script-mode) auto-mode-alist))
@@ -113,15 +118,20 @@
 	  (lambda ()
 	    (setq comment-start "##")))
 
+;; (add-to-list 'c-offsets-alist '(arglist-close . c-lineup-close-paren))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-set-offset 'arglist-cont-nonempty '+)
+            (c-set-offset 'arglist-intro '+)
+	    ))
+
 ; Highlight the current line
 ; from https://emacsredux.com/blog/2013/04/02/highlight-current-line/
 (global-hl-line-mode +1)
 
-; (set-frame-font "Fantasque Sans Mono 16" nil t)
 (set-frame-font "Hack 12" nil t)
 
 (load-theme 'deeper-blue t)
+(set-cursor-color "#eeeeee")
 
 (set-default-file-modes ?\700)
-
-; (set-face-background 'scroll-bar "darkgrey")

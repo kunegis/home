@@ -2,3 +2,13 @@ Various Ubuntu settings.
 
 * ibus-setup:  Run "ibus-setup" in the terminal and set the "Emoji" shortcut to
   something else, because otherwise Ctrl-; keeps popping up an "e" tooltip.
+
+* To get dark mode in Firefox PDF display:  Create file ~/snap/firefox/common/.mozilla/firefox/*.default/chrome/userContent.css with content:
+
+#viewerContainer > #viewer > .page > .canvasWrapper > canvas {
+   filter: invert(70%);
+}
+
+* Increase mouse pointer size:  Start "dconf-editor", go to
+  org/gnome/desktop/interface/cursor-size and change the value.
+  

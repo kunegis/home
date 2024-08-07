@@ -1,9 +1,0 @@
-#! /bin/sh
-#
-# Wrapper around Emacs that makes the keys work; used for Ubuntu 18.04
-# LTS.  
-#
-
-export XMODIFIERS=""
-
-exec emacs
