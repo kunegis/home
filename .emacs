@@ -1,5 +1,5 @@
 ;;
-;; The '.emacs' file of Jérôme Kunegis. 
+;; The '.emacs' file of Jérôme Kunegis.
 ;;
 
 ;; global
