@@ -98,6 +98,8 @@
 (global-set-key [f11] 'next-error)
 (global-set-key [f12] 'jay-goto-comp)
 (global-set-key (kbd "C-x C-r") 'view-file)
+(global-set-key (kbd "M-,") 'beginning-of-buffer)
+(global-set-key (kbd "M-.") 'end-of-buffer)
 
 (setq auto-mode-alist (cons '("Makefile.*" . makefile-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.stu$" . shell-script-mode) auto-mode-alist))
