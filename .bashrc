@@ -22,6 +22,7 @@ PATH="$HOME/bin:$HOME/src/home/bin:$PATH"
 
 alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 export LS_COLORS='di=1;97:ow=1;30;42:'
 
