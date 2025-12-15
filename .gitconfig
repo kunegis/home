@@ -1,5 +1,9 @@
 [user]
 	email = kunegis@gmail.com
-	name = Jérôme Kunegis
+	name = Jérôme KUNEGIS
 [core]
-	excludesfile = /home/kunegis/.gitignore
+	excludesfile = /home/kunegis/src/home/.gitignore
+[color]
+	ui = true
+[push]
+	autoSetupRemote = true

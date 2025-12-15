@@ -9,8 +9,8 @@ PS1="\[\e[1m\]\h:\w $ \[\e[m\]"
 
 export EDITOR=vim
 
-# For screen(1)
-[ "$STY" ] && PS1="[$STY] $PS1"
+## # For screen(1)
+## [ "$STY" ] && PS1="[$STY] $PS1"
 
 # Disable tilde expansion
 _expand()
@@ -24,7 +24,7 @@ alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-export LS_COLORS='di=1;97:ow=1;30;42:'
+export LS_COLORS='di=1;97:ex=0;32:ln=target:or=00;31:'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs

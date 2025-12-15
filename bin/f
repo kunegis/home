@@ -1,0 +1,6 @@
+#! /bin/sh
+
+args=.
+[ "$1" ] && args=
+
+find $args "$@" -print0 | xargs -0 ls -ldU --color=always
