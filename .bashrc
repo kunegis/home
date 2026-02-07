@@ -24,7 +24,7 @@ alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-export LS_COLORS='di=1;97:ex=0;32:ln=target:or=00;31:'
+export LS_COLORS='di=1;97:ex=0;32:ln=target:or=00;31:ow=1;97'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs
