@@ -1,6 +1,12 @@
 #! /bin/sh
 
-args=.
-[ "$1" ] && args=
+options="-HI --batch-size=1000 --exec-batch ls -ldU --color=always"
 
-find $args "$@" -print0 | xargs -0 ls -ldU --color=always
+arg=
+[ "$1" ] && arg=$1
+
+if [ "$arg" ] ; then
+	fdfind --search-path "$arg" $options
+else
+	fdfind $options
+fi
