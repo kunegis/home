@@ -1,7 +1,13 @@
-#! /bin/sh
+#!/bin/sh
 #
-# Show disk usage in current directory.
+# Show disk usage.
 #
 
+set -e
+
+dir=$1
+[ "$2" ] && { echo >&2 "Invocation" ; exit 2 ; }
+
+[ "$dir" ] && cd $dir
+
 ls -UA1 | xargs -d '\n' du -s | sort -n
- 
