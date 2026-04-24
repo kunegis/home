@@ -9,9 +9,6 @@ PS1="\[\e[1m\]\h:\w $ \[\e[m\]"
 
 export EDITOR=vim
 
-## # For screen(1)
-## [ "$STY" ] && PS1="[$STY] $PS1"
-
 # Disable tilde expansion
 _expand()
 {
@@ -24,7 +21,7 @@ alias df='df -x squashfs -x tmpfs -x devtmpfs -T'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-export LS_COLORS='di=1;97:ex=0;32:ln=target:or=00;31:ow=1;97'
+export LS_COLORS='di=1;97:ex=0;34:ln=target:or=00;31:ow=1;97'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs
@@ -38,7 +35,7 @@ git() {
 
 			# Show that we are in a branch, if we are not in 'master'
 			if [ -z "$jk_git_no_branch" -a "$label" != master ] ; then
-				echo "In branch [35m$label[m"
+				printf 'In branch \e[35m%s\e[m\n' "$label"
 			fi
 
 			# In case git uses a pager unnecessarily
@@ -54,7 +51,7 @@ git() {
 			# If there is no .git directory, assume that we are in
 			# ~/src, where all subdirectories are git directories.
 			if [ "$(basename $(pwd))" != src ] ; then
-				echo >&2 "*** git(): Not a git directory"
+				printf >&2 '\e[31m*** git(): Not a git directory\e[m\n'
 				return 1
 			fi 
 			for dir in * ; do
