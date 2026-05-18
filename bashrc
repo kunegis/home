@@ -7,6 +7,9 @@ umask 077
 
 PS1="\[\e[1m\]\h:\w $ \[\e[m\]"
 
+unset PROMPT_COMMAND MAILCHECK MAIL LC_ALL
+export LC_TIME=en_DK.UTF-8 # Has ISO date format
+
 export EDITOR=vim
 
 # Disable tilde expansion
@@ -22,6 +25,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 export LS_COLORS='di=1;97:ex=0;34:ln=target:or=00;31:ow=1;97'
+export TIME_STYLE=+'%F %H:%M'
 
 # Allows to just type 'git' and get a summary of important information
 # about a repository.   My rule is:  "don't go home before 'git' outputs
