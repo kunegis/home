@@ -6,9 +6,8 @@ Various Ubuntu settings.
 * To get dark mode in Firefox PDF display:  Create file ~/snap/firefox/common/.mozilla/firefox/*.default/chrome/userContent.css with content:
 
 #viewerContainer > #viewer > .page > .canvasWrapper > canvas {
-   filter: invert(70%);
+   filter: invert(80%);
 }
 
 * Increase mouse pointer size:  Start "dconf-editor", go to
   org/gnome/desktop/interface/cursor-size and change the value.
-  

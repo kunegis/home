@@ -137,3 +137,5 @@
 (set-cursor-color "#eeeeee")
 
 (set-default-file-modes ?\700)
+
+(setq dired-listing-switches "-lhvA")
