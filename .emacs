@@ -138,4 +138,4 @@
 
 (set-default-file-modes ?\700)
 
-(setq dired-listing-switches "-lhvA")
+(setq dired-listing-switches "-lvA")
