@@ -1,0 +1,32 @@
+#!/bin/sh
+ret=0
+
+Usage()
+{
+	echo "Usage: $0 [-f] OLDPREFIX NEWPREFIX"
+}
+
+ECHO=echo
+
+if [ "$1" = -f ] ; then
+	ECHO=
+	shift
+fi
+
+oldprefix=$1
+newprefix=$2
+
+[ "$oldprefix" ] && [ "$newprefix" ] || { Usage ; exit 2 ; }
+
+ls -1U | grep -E -e '^'"$oldprefix" |
+while IFS= read -r name ; do
+	newname=$(printf '%s\n' "$name" | sed -E -e 's,^'"$oldprefix"','"$newprefix"',')
+	if [ -e "$newname" ] ; then
+		echo >&2 "Error: target $newname exists"
+		ret=1
+	else
+		$ECHO mv -n -- "$name" "$newname"
+	fi
+done
+
+exit $ret
