@@ -1,6 +1,7 @@
+# -*-shell-script-*-
 #
-# The '.bashrc' file of Jérôme Kunegis.  '.bashrc' usually already
-# contains something, so better source this file using '.'. 
+# The '.bashrc' file of Jérôme Kunegis.  '.bashrc' usually already contains something, so
+# better source this file using '.'.
 #
 
 umask 077
@@ -68,7 +69,15 @@ git() {
 			done
 		fi
 	else
-		command git "$@"
+		# When followed by a command, just execute that
+##		echo aaa ##
+		if [ "$1" = commit ] && command -v gited >/dev/null ; then
+##			echo bbb ##
+			GIT_EDITOR=gited command git "$@"
+		else
+##			echo ccc ##
+			GIT_EDITOR=vim command git "$@"
+		fi
 	fi
 }
 

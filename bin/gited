@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Use as $GIT_EDITOR, to pre-fill the message.
+#
+
+label=$(git symbolic-ref --short HEAD 2>/dev/null) || label=''
+
+## echo >&2 "label='$label'" ##
+
+[ "$label" = master ] && label=''
+
+if [ "$label" ] ; then
+	text=$(echo "$label" | sed -E -e 's,^.*/,,')
+else
+	text=
+fi
+
+## echo >&2 "text='$text'" ##
+
+if [ "$text" ] ; then
+	exec vim -c "execute 'normal! i$text'" "$@"
+else
+	exec vim "$@"
+fi
